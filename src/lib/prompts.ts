@@ -58,7 +58,7 @@ export function emailPrompt(input: EmailInput): PromptSpec {
     objective: `Write one complete, ready-to-send email that achieves the purpose "${input.purpose}" and moves the recipient towards: ${input.action}.`,
     constraints: [
       `- Tone: ${input.tone.toLowerCase()}, always professional and respectful.`,
-      `- Length: ${lengthRule[input.length] ?? lengthRule.Medium}`,
+      `- Length: ${lengthRule[input.length] ?? lengthRule["Medium"]}`,
       "- Use only the facts supplied by the sender. Never invent dates, figures, names or commitments.",
       "- If a needed detail is missing, use a clearly bracketed placeholder such as [date].",
       "- No emojis, no marketing hype, no filler phrases.",
@@ -192,7 +192,7 @@ export function researchPrompt(input: ResearchInput): PromptSpec {
     objective:
       "Produce a structured research briefing on the topic, prioritising the user's supplied source text when present.",
     constraints: [
-      `- Depth: ${depthRule[input.depth] ?? depthRule.Medium}`,
+      `- Depth: ${depthRule[input.depth] ?? depthRule["Medium"]}`,
       "- You have NO live internet access. Never claim to have browsed, searched or verified sources.",
       "- Do not fabricate citations, URLs, statistics or study names. Where a figure is uncertain, say so plainly.",
       "- Distinguish established knowledge from analysis or opinion.",
